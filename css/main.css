@@ -398,6 +398,8 @@ main {
 }
 
 .floating-image {
+    width: 50px;
+    height: 50px;
     position: fixed;
     bottom: 0;
     left: 3%;
