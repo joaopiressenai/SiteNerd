@@ -1,0 +1,102 @@
+[
+    {
+        "id": "camiseta-01",
+        "titulo": "Camiseta 01",
+        "imagen": "assets/img/camiseta/produto2.png",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "camisetas"
+        },
+        "precio": 44.90
+    },
+    {
+        "id": "camiseta-02",
+        "titulo": "Abrigo 02",
+        "imagen": "assets/img/camiseta/produto3.png",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "camisetas"
+        },
+        "precio": 74.90
+    },
+    {
+        "id": "camiseta-03",
+        "titulo": "Abrigo 03",
+        "imagen": "assets/img/camiseta/produto4.png",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "camisetas"
+        },
+        "precio": 74.90
+    },
+    {
+        "id": "outro-01",
+        "titulo": "Outro 01",
+        "imagen": "assets/img/outro/produto5.png",
+        "categoria": {
+            "nombre": "Outros",
+            "id": "outros"
+        },
+        "precio": 74.90
+    },
+    {
+        "id": "outro-02",
+        "titulo": "Outro 02",
+        "imagen": "assets/img/outro/produto7.png",
+        "categoria": {
+            "nombre": "Outros",
+            "id": "outros"
+        },
+        "precio": 44.90
+    },
+    {
+        "id": "outro-03",
+        "titulo": "Outro 03",
+        "imagen": "assets/img/outro/produto8.png",
+        "categoria": {
+            "nombre": "Outros",
+            "id": "outros"
+        },
+        "precio": 104.90
+    },
+    {
+        "id": "outro-04",
+        "titulo": "Outro 04",
+        "imagen": "assets/img/outro/produto9.png",
+        "categoria": {
+            "nombre": "Outros",
+            "id": "outros"
+        },
+        "precio": 274.90
+    },
+    {
+        "id": "outro-05",
+        "titulo": "Outro 05",
+        "imagen": "assets/img/outro/produto10.png",
+        "categoria": {
+            "nombre": "Outros",
+            "id": "outros"
+        },
+        "precio": 94.90
+    },
+    {
+        "id": "pelucia-01",
+        "titulo": "Pelucia 01",
+        "imagen": "assets/img/pelucia/produto1.png",
+        "categoria": {
+            "nombre": "Pelucias",
+            "id": "pelucias"
+        },
+        "precio": 354.90
+    },
+    {
+        "id": "pelucia-02",
+        "titulo": "Pelucia 02",
+        "imagen": "assets/img/pelucia/produto6.png",
+        "categoria": {
+            "nombre": "Pelucias",
+            "id": "pelucias"
+        },
+        "precio": 74.90
+    }
+]
