@@ -7,7 +7,7 @@
             "nombre": "Camisetas",
             "id": "camisetas"
         },
-        "precio": 44.90
+        "precio": 74.90
     },
     {
         "id": "camiseta-02",
@@ -37,7 +37,7 @@
             "nombre": "Outros",
             "id": "outros"
         },
-        "precio": 74.90
+        "precio": 44.90
     },
     {
         "id": "outro-02",
@@ -47,7 +47,7 @@
             "nombre": "Outros",
             "id": "outros"
         },
-        "precio": 44.90
+        "precio": 274.90
     },
     {
         "id": "outro-03",
@@ -57,7 +57,7 @@
             "nombre": "Outros",
             "id": "outros"
         },
-        "precio": 104.90
+        "precio": 94.90
     },
     {
         "id": "outro-04",
@@ -67,7 +67,7 @@
             "nombre": "Outros",
             "id": "outros"
         },
-        "precio": 274.90
+        "precio": 354.90
     },
     {
         "id": "outro-05",
@@ -77,7 +77,7 @@
             "nombre": "Outros",
             "id": "outros"
         },
-        "precio": 94.90
+        "precio": 74.90
     },
     {
         "id": "pelucia-01",
@@ -87,7 +87,7 @@
             "nombre": "Pelucias",
             "id": "pelucias"
         },
-        "precio": 354.90
+        "precio": 44.90
     },
     {
         "id": "pelucia-02",
@@ -97,6 +97,6 @@
             "nombre": "Pelucias",
             "id": "pelucias"
         },
-        "precio": 74.90
+        "precio": 104.90
     }
 ]
