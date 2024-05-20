@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8" />
@@ -11,94 +11,143 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styleProduto.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 
 <body id="page-top" style="background-color: black;">
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="50px" height="50px"
-                    alt="NerdGoal"></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
+    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top" data-bs-theme="light" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" height="60px" width="60px" alt="NerdGoal">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link disabled" aria-disabled="true" href="#about">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link " href="produto.html">Produtos</a></li>
-                    <li class="nav-item"><a class="nav-link disabled" aria-disabled="true" href="#signup">Contato</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produto.html">Produtos</a>
+                    </li>
+                </ul>
+                <div class="d-flex theme-toggle">
+                    <span class="btn-login">Login</span>
+                    <a href="login.html" class="btn btn-link p-0">
+                        <img src="assets/img/userLight.png" width="30px" height="30px" alt="Usuário">
+                    </a>
+                    <div class="btn-group theme-toggle" role="group" aria-label="Toggle Theme">
+                        <button class="light-theme btn btn-link p-0">
+                            <img src="assets/img/sun.png" width="30px" height="30px" alt="Tema Claro">
+                        </button>
+                        <button class="dark-theme btn btn-link p-0">
+                            <img src="assets/img/moon.png" width="30px" height="30px" alt="Tema Escuro">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Segundo Navbar com Filtros de Produtos -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-bs-theme="light" id="filterNav">
+        <div class="container-fluid">
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#filterNavbar" aria-controls="filterNavbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="filterNavbar">
+                <ul class="navbar-nav nav-tabs me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <button id="todos" class="nav-link active">
+                            Todos os produtos
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="pelucias" class="nav-link">
+                            Pelúcias
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="camisetas" class="nav-link">
+                            Camisetas</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="outros" class="nav-link">
+                            Outros
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="wrapper">
-        <aside>
-            <button class="close-menu" id="close-menu">
-                <i class="bi bi-x"></i>
-            </button>
-            <br>
-            <nav>
-                <ul class="menu">
-                    <li>
-                        <button id="todos" class="boton-menu boton-categoria active"><i
-                                class="bi bi-hand-index-thumb-fill"></i> Todos os produtos</button>
-                    </li>
-                    <li>
-                        <button id="abrigos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>
-                            Pelúcias</button>
-                    </li>
-                    <li>
-                        <button id="camisetas" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>
-                            Camisetas</button>
-                    </li>
-                    <li>
-                        <button id="pantalones" class="boton-menu boton-categoria"><i
-                                class="bi bi-hand-index-thumb"></i> Outros</button>
-                    </li>
-                    <li>
-                        <a class="boton-menu boton-carrito" href="./carrinho.html">
-                            <i class="bi bi-cart-fill"></i> Carrinho <span id="numerito" class="numerito">0</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        <main>
-            <h2 class="titulo-principal" id="titulo-principal">Todos os productos</h2>
-            <div id="contenedor-productos" class="contenedor-productos">
-                <!-- Esto se va a rellenar con JS -->
-            </div>
-        </main>
+    <div class="cart-fixed">
+        <a href="carrinho.html" style="text-decoration: none;"> <i id="cart" class="fas fa-shopping-cart text-warning"></i> <span
+                    id="numerito" class="numerito">0</span> </a> 
     </div>
+    <!-- Produtos -->
+    <main style="margin-top: 15%;">
+        <div id="contenedor-productos" class="contenedor-productos">
+            <!-- Isso será preenchido com JS -->
+        </div>
+    </main>
 
-    <div class="floating-image">
-        <img src="assets/img/nave.png" alt="Imagem Flutuante" width="75px" height="75px">
-    </div>
-    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/menu.js"></script>
+    <script src="js/changeTheme.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const floatingImage = document.querySelector('.floating-image img');
-            let animationDuration = 5000; // 5 seconds
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
 
-            floatingImage.addEventListener('animationiteration', function() {
-                floatingImage.style.bottom = '0';
+            // Função para alternar o menu
+            function toggleMenu() {
+                navbarCollapse.classList.toggle('show');
+            }
+
+            // Adiciona evento de clique ao botão de toggler
+            navbarToggler.addEventListener('click', function (event) {
+                event.stopPropagation();
+                toggleMenu();
+            });
+
+            // Fecha o menu se clicar fora dele
+            document.addEventListener('click', function (event) {
+                if (navbarCollapse.classList.contains('show') && !navbarCollapse.contains(event.target)) {
+                    toggleMenu();
+                }
             });
         });
+        // Adicione este código JavaScript para controlar a exibição da segunda navbar e do link do carrinho
+        document.addEventListener('DOMContentLoaded', function () {
+            const screenWidth = window.innerWidth;
+            const secondNavbar = document.getElementById('filterNav');
+            const mobileCartLink = document.querySelector('.mobile-cart-link');
+
+            // Verifica o tamanho da tela ao carregar e redimensionar
+            function checkScreenWidth() {
+                if (screenWidth <= 576) {
+                    secondNavbar.style.display = 'none'; // Oculta a segunda navbar em telas menores que 576px
+                    mobileCartLink.style.display = 'block'; // Exibe o link do carrinho
+                } else {
+                    secondNavbar.style.display = 'block'; // Exibe a segunda navbar em telas maiores que 576px
+                    mobileCartLink.style.display = 'none'; // Oculta o link do carrinho
+                }
+            }
+
+            // Chama a função ao carregar a página e redimensionar a tela
+            checkScreenWidth();
+            window.addEventListener('resize', checkScreenWidth);
+        });
+
     </script>
 </body>
 

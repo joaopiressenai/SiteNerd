@@ -1,0 +1,418 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    background: url('/assets/img/espaco.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor-carrinho {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.carrinho-vazio,
+.carrinho-comprado {
+    color: var(--clr-principal);
+}
+
+.carrinho-produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carrinho-produto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-cinza);
+    color: var(--clr-principal);
+    padding: .5rem;
+    padding-right: 1.5rem;
+    border-radius: 1rem;
+}
+
+.carrinho-produto-imagem {
+    width: 4rem;
+    border-radius: 1rem;
+}
+
+.carrinho-produto small {
+    font-size: .75rem;
+}
+
+.carrinho-produto-eliminar {
+    border: 0;
+    background-color: transparent;
+    color: var(--clr-vermelho);
+    cursor: pointer;
+}
+
+.carrinho-acoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrinho-acoes-esvaziar {
+    border: 0;
+    background-color: var(--clr-cinza);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--clr-principal);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.carrinho-acoes-direita {
+    display: flex;
+}
+
+.carrinho-acoes-total {
+    display: flex;
+    background-color: var(--clr-cinza);
+    padding: 1rem;
+    color: var(--clr-principal);
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    gap: 1rem;
+}
+
+.carrinho-acoes-comprar {
+    border: 0;
+    background-color: var(--clr-principal);
+    padding: 1rem 2rem;
+    color: var(--clr-branco);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semitransparente */
+    margin: auto 0;
+    border-radius: 0 2rem 2rem 2rem; /* Adiciona borda superior esquerda com 0 de raio */
+    padding: 3rem;
+}
+
+.boton-menu,
+.boton-carrinho {
+    border: 2px solid var(--clr-principal);
+    background-color: var(--clr-branco);
+    color: var(--clr-principal);
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.boton-menu:hover,
+.boton-carrinho:hover {
+    background-color: var(--clr-principal);
+    color: var(--clr-branco);
+}
+
+.boton-menu.active {
+    background-color: var(--clr-principal);
+    color: var(--clr-branco);
+}
+
+.header-mobile {
+    display: none;
+}
+
+.close-menu {
+    display: none;
+}
+
+.disabled {
+    display: none;
+}
+
+/*** MEDIA QUERIES ***/
+
+@media screen and (max-width: 850px) {
+    .contenedor-produtos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 675px) {
+    .contenedor-produtos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .wrapper {
+        width: 100%;
+    }
+
+    aside {
+        padding: 2rem;
+        padding-right: 0;
+        color: var(--clr-branco);
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.2); /* Fundo branco semitransparente */
+    }
+
+    .aside-visible {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .boton-menu.active::before,
+    .boton-menu.active::after {
+        display: none;
+    }
+
+    main {
+        margin: 1rem auto;
+        padding: 2rem;
+    }
+
+    .contenedor-produtos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .header-mobile {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-mobile .logo {
+        color: var(--clr-cinza);
+    }
+
+    .open-menu, .close-menu {
+        background-color: transparent;
+        color: var(--clr-cinza);
+        border: 0;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .carrinho-produto {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: .5rem;
+    }
+
+    .carrinho-produto-subtotal {
+        display: none;
+    }
+
+    .carrinho-acoes {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .contenedor-produtos {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* CSS Adicional para o Design dos Botões */
+
+/* Estilizando todos os botões */
+.btn {
+    color: white; /* Cor do texto */
+}
+
+/* Estilo para os botões com fundo amarelo */
+.btn-warning {
+    background-color: #FFD700; /* Amarelo */
+    border-color: #FFD700; /* Borda Amarela */
+}
+
+/* Estilo para os botões com fundo verde */
+.btn-success {
+    background-color: #28a745; /* Verde */
+    border-color: #28a745; /* Borda Verde */
+}
+
+/* Estilo para os botões com fundo vermelho */
+.btn-danger {
+    background-color: #dc3545; /* Vermelho */
+    border-color: #dc3545; /* Borda Vermelha */
+}
+
+/* Hover para todos os botões */
+.btn:hover {
+    opacity: 0.8; /* Diminui a opacidade ao passar o mouse */
+}
+
+.carrinho-produto-remover {
+    background-color: #dc3545; /* Vermelho */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 50%; /* Deixa o botão com formato circular */
+    width: 2rem; /* Define a largura */
+    height: 2rem; /* Define a altura */
+    padding: 0; /* Remove qualquer preenchimento interno */
+    cursor: pointer; /* Cursor ao passar o mouse */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave de cores */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrinho-produto-remover:hover {
+    background-color: #c82333; /* Vermelho mais escuro no hover */
+}
+
+.titulo-principal {
+    font-size: 2rem; /* Reduz o tamanho do título */
+}
+
+.boton-menu,
+.boton-carrinho {
+    padding: 0.5rem 1.5rem; /* Reduz o padding dos botões */
+}
+
+.carrinho-acoes-esvaziar,
+.carrinho-acoes-comprar,
+.carrinho-acoes-total {
+    padding: 0.75rem 2rem; /* Ajusta o padding dos botões de ação */
+}
+
+
+/* CSS para melhorar o design das abas */
+.nav-tabs .nav-link {
+    background-color: rgba(255, 255, 255, 0.8); /* Reduz a opacidade */
+    border: none;
+    color: #000; /* Cor do texto */
+    border-radius: 0.5rem 0.5rem 0 0;
+    opacity: 0.8; /* Opacidade reduzida */
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #fff; /* Cor de fundo ativa */
+    border-bottom-color: transparent; /* Remove a borda inferior */
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    background-color: #f0f0f0; /* Cor de fundo no foco/hover */
+}
+
+.tab-content {
+    border: 1px solid rgba(0, 0, 0, 0.125); /* Adiciona uma borda para separar as abas */
+    border-top: none; /* Remove a borda superior */
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 1rem;
+}
+
+/* Adicionar/ajustar estilos para responsividade mobile */
+@media screen and (max-width: 600px) {
+    .wrapper {
+        width: 100%;
+        padding: 0 1rem; /* Adiciona padding para evitar conteúdo colado nas bordas */
+    }
+
+    .header-mobile {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Ajustes para o botão de menu */
+    .open-menu, .close-menu {
+        background-color: transparent;
+        border: 0;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .contenedor-carrinho {
+        padding: 1rem;
+    }
+
+    /* Ajustar layout dos produtos do carrinho */
+    .carrinho-produto {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .carrinho-acoes {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    /* Ajustar tamanho dos botões */
+    .carrinho-acoes-esvaziar,
+    .carrinho-acoes-comprar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .carrinho-acoes-total {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Adicionar media query para telas muito pequenas */
+@media screen and (max-width: 400px) {
+    .contenedor-carrinho {
+        padding: 0.5rem;
+    }
+
+    .carrinho-produto {
+        padding: 0.5rem;
+    }
+
+    .carrinho-acoes-esvaziar,
+    .carrinho-acoes-comprar,
+    .carrinho-acoes-total {
+        padding: 0.5rem;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .tab-content {
+        padding: 0.5rem;
+    }
+}
+

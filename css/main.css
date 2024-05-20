@@ -1,418 +1,201 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
-
-:root {
-    --clr-main: #FFC107; /* Cor amarela principal */
-    --clr-main-light: #FFD54F; /* Cor amarela clara */
-    --clr-white: #ececec;
-    --clr-gray: #e2e2e2;
-    --clr-red: #961818;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
-    margin: 0;
-    padding: 0;
-}
-
-ul {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-}
-
+/* Estilos gerais */
 body {
+    font-family: 'Rubik', sans-serif;
     background: url('/assets/img/espaco.png') no-repeat center center fixed;
     background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
-.wrapper {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
+/* Estilos para a barra de navegação fixa */
+.fixed-cart {
+    position: fixed;
+    top: 70px; /* Ajuste conforme a altura da barra de navegação */
+    right: 20px;
+    z-index: 1000; /* Para garantir que esteja acima de outros elementos */
 }
 
-aside {
-    margin-left: 15%;
-    padding: 2rem;
-    padding-right: 0;
-    color: var(--clr-white);
-    position: sticky;
-    top: 0;
-    height: 100vh;
+/* Estilos para a barra de filtros de produtos */
+.filters {
+    background-color: rgba(255, 214, 0, 0.5); /* Amarelo/laranja com transparência */
+    padding: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.logo {
-    font-weight: 400;
-    font-size: 1.3rem;
-}
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-.boton-menu {
-    background-color: transparent;
-    border: 0;
-    color: var(--clr-white);
-    cursor: pointer;
-    display: flex;
+    justify-content: space-around;
     align-items: center;
-    gap: 1rem;
-    font-weight: 600;
-    padding: 1rem;
-    font-size: .85rem;
-    width: 100%;
 }
 
-.boton-menu.active {
-    background-color: var(--clr-white);
-    color: var(--clr-main);
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    position: relative;
-}
-
-.boton-menu.active::before {
-    content: '';
-    position: absolute;
-    width: 1rem;
-    height: 2rem;
-    bottom: 100%;
-    right: 0;
-    background-color: transparent;
-    border-bottom-right-radius: .5rem;
-    box-shadow: 0 1rem 0 var(--clr-white);
-}
-
-.boton-menu.active::after {
-    content: '';
-    position: absolute;
-    width: 1rem;
-    height: 2rem;
-    top: 100%;
-    right: 0;
-    background-color: transparent;
-    border-top-right-radius: .5rem;
-    box-shadow: 0 -1rem 0 var(--clr-white);
-}
-
-.boton-menu > i.bi-hand-index-thumb-fill,
-.boton-menu > i.bi-hand-index-thumb {
-    transform: rotateZ(90deg);
-}
-
-.boton-carrito {
-    margin-top: 2rem;
-}
-
-.numerito {
-    background-color: var(--clr-white);
-    color: var(--clr-main);
-    padding: .15rem .25rem;
-    border-radius: .25rem;
-}
-
-.boton-carrito.active .numerito {
-    background-color: var(--clr-main);
-    color: var(--clr-white);
-}
-
-.texto-footer {
-    color: var(--clr-main-light);
-    font-size: .85rem;
-}
-
-main {
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo branco semitransparente */
-    margin: 6% 6% 0 0%; /* 10% de margem superior, 15% de margem à esquerda */
+/* Estilos para a seção principal */
+.main {
+    background-color: rgba(255, 214, 0, 0.5); /* Amarelo/laranja com transparência */
+    margin: 10% auto 0;
     border-radius: 2rem;
     padding: 3rem;
+    width: 80%; /* 80% da largura da tela */
 }
 
+/* Estilos para o título principal */
 .titulo-principal {
-    color: var(--clr-main);
+    color: #FFC107; /* Amarelo/laranja */
     margin-bottom: 2rem;
 }
 
+/* Estilos para o contêiner dos produtos */
 .contenedor-productos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
 
-.producto-imagen {
-    max-width: 100%;
-    border-radius: 0.7rem;
-}
-
-.producto-detalles {
-    background-color: var(--clr-main);
-    color: var(--clr-white);
-    padding: .5rem;
-    border-radius: 0.3rem;
-    margin-top: -0.7rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: .25rem;
-}
-
-
-.producto-titulo {
-    font-size: 1rem;
-}
-
-.producto-agregar {
-    border: 0;
-    background-color: var(--clr-white);
-    color: var(--clr-main);
-    padding: .4rem;
-    text-transform: uppercase;
-    border-radius: 2rem;
-    cursor: pointer;
-    border: 2px solid var(--clr-white);
-    transition: background-color .2s, color .2s;
-}
-
-.producto-agregar:hover {
-    background-color: var(--clr-main);
-    color: var(--clr-white);
-}
-
-
-/** CARRITO **/
-
-.contenedor-carrito {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.carrito-vacio,
-.carrito-comprado {
-    color: var(--clr-main);
-}
-
-.carrito-productos {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.carrito-producto {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--clr-gray);
-    color: var(--clr-main);
-    padding: .5rem;
-    padding-right: 1.5rem;
-    border-radius: 1rem;
-}
-
-.carrito-producto-imagen {
-    width: 4rem;
-    border-radius: 1rem;
-}
-
-.carrito-producto small {
-    font-size: .75rem;
-}
-
-.carrito-producto-eliminar {
-    border: 0;
-    background-color: transparent;
-    color: var(--clr-red);
-    cursor: pointer;
-}
-
-.carrito-acciones {
-    display: flex;
-    justify-content: space-between;
-}
-
-.carrito-acciones-vaciar {
-    border: 0;
-    background-color: var(--clr-gray);
-    padding: 1rem;
-    border-radius: 1rem;
-    color: var(--clr-main);
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.carrito-acciones-derecha {
-    display: flex;
-}
-
-.carrito-acciones-total {
-    display: flex;
-    background-color: var(--clr-gray);
-    padding: 1rem;
-    color: var(--clr-main);
-    text-transform: uppercase;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    gap: 1rem;
-}
-
-.carrito-acciones-comprar {
-    border: 0;
-    background-color: var(--clr-main);
-    padding: 1rem;
-    color: var(--clr-white);
-    text-transform: uppercase;
-    cursor: pointer;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-}
-
-.header-mobile {
-    display: none;
-}
-
-.close-menu {
-    display: none;
-}
-
-.disabled {
-    display: none;
-}
-
-/*** MEDIA QUERIES ***/
-
-@media screen and (max-width: 850px) {
-    .contenedor-productos {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-@media screen and (max-width: 675px) {
-    .contenedor-productos {
-        grid-template-columns: 1fr 1fr;
+/* Estilos de responsividade */
+@media screen and (max-width: 768px) {
+    .main {
+        width: 90%; /* Reduzir a largura para telas menores */
     }
 }
 
 @media screen and (max-width: 600px) {
-
-    .wrapper {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    aside {
-        padding: 2rem;
-        padding-right: 0;
-        color: var(--clr-white);
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: rgba(255, 255, 255, 0.2); /* Fundo branco semitransparente */
-    }
-
-    .aside-visible {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .boton-menu.active::before,
-    .boton-menu.active::after {
-        display: none;
-    }
-
-    main {
-        margin: 1rem;
-        margin-top: 0;
-        padding: 2rem;
-    }
-
     .contenedor-productos {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
     }
-
-    .header-mobile {
-        padding: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .header-mobile .logo {
-        color: var(--clr-gray);
-    }
-
-    .open-menu, .close-menu {
-        background-color: transparent;
-        color: var(--clr-gray);
-        border: 0;
-        font-size: 2rem;
-        cursor: pointer;
-    }
-
-    .close-menu {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-    }
-
-    .carrito-producto {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        padding: .5rem;
-    }
-
-    .carrito-producto-subtotal {
-        display: none;
-    }
-
-    .carrito-acciones {
-        flex-wrap: wrap;
-        row-gap: 1rem;
-    }
-    
-
 }
 
 @media screen and (max-width: 400px) {
     .contenedor-productos {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
     }
 }
 
-.floating-image {
-    width: 25px;
-    height: 25px;
+/* Estilos para a segunda barra de navegação */
+#filterNav {
     position: fixed;
-    bottom: 0;
-    left: 3%;
-    transform: translateX(-50%);
-    animation: floatUp 5s linear infinite;
+    top: 70px; /* Ajuste conforme a altura da primeira barra de navegação */
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #FFC107; /* Amarelo/laranja */
 }
 
-@keyframes floatUp {
-    0% {
-        bottom: 0;
-    }
-    100% {
-        bottom: 100vh;
-    }
+#filterNavbar {
+    justify-content: flex-end; /* Alinha os itens à direita */
+}
+
+#filterNavbar .navbar-nav .nav-item {
+    margin-left: 10px; /* Adiciona um espaçamento entre os itens */
+}
+
+#filterNavbar .navbar-nav .nav-item:last-child {
+    margin-left: 0; /* Remove o espaçamento do último item */
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem; /* Ajusta o espaçamento interno */
+}
+
+/* Estilos para o carrinho fixo */
+.fixed-cart {
+    position: fixed;
+    top: 70px; /* Ajuste conforme a altura da primeira barra de navegação */
+    right: 20px;
+    z-index: 1001; /* Garante que o carrinho esteja acima da segunda barra de navegação */
+    background-color: #fff; /* Fundo branco */
+    padding: 15px;
+}
+
+.fixed-cart a {
+    display: flex;
+    align-items: center;
+}
+
+.fixed-cart span {
+    margin-left: 5px;
+}
+
+/* Estilos para os cards de produtos */
+.produto {
+    border: 1px solid #FFC107; /* Borda amarela/laranja */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #fff; /* Fundo branco */
+}
+
+.produto-imagem {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #FFC107; /* Borda amarela/laranja */
+}
+
+.produto-detalhes {
+    padding: 15px;
+}
+
+.produto-titulo {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #FFC107; /* Amarelo/laranja */
+}
+
+.produto-preco {
+    font-size: 1rem;
+    color: #FFC107; /* Amarelo/laranja */
+    margin-bottom: 10px;
+}
+
+.produto-adicionar {
+    background-color: #FFC107; /* Amarelo/laranja */
+    color: #fff; /* Texto branco */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.produto-adicionar:hover {
+    background-color: #FFA000; /* Tom mais escuro de amarelo/laranja no hover */
+}
+
+/* Estilos para o numerito do carrinho */
+.numerito {
+    background-color: #FFC107; /* Amarelo/laranja */
+    color: #fff; /* Texto branco */
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+}
+
+/* Estilos para o botão de login no navbar */
+.navbar-nav .btn-login {
+    color: #FFC107; /* Cor amarela/laranja */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease; /* Efeito de transição suave */
+}
+
+.navbar-nav .btn-login img {
+    margin-left: 5px; /* Adiciona um espaço entre o texto e o ícone */
+    vertical-align: middle; /* Alinha verticalmente o ícone */
+}
+
+.navbar-nav .btn-login:hover {
+    color: #FFA000; /* Tom mais escuro de amarelo/laranja no hover */
+}
+
+/* Estilos para o contêiner dos produtos */
+.contenedor-productos {
+    width: 80%; /* Define a largura como 80% da largura da tela */
+    margin: 0 auto; /* Centraliza o contêiner na página */
+    padding: 20px; /* Adiciona um espaçamento interno */
+}
+
+/* Estilos para o modo claro */
+.light-mode {
+    background-color: #fff;
+    color: black;
+}
+
+/* Estilos para o modo escuro */
+.dark-mode {
+    background-color: #000;
+    color: white;
 }

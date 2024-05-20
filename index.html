@@ -1,60 +1,312 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <title>NerdGoal - Produtos</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/logo.png"/>
-    <!-- Ícones Font Awesome (versão gratuita)-->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Fontes do Google -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
-    <!-- CSS principal do tema (inclui Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NerdGoal</title>
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
-<body id="page-top" style="background-color: black;">
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="50px" height="50px"
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top" data-bs-theme="light" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="assets/img/logo.png" height="60px" width="60px"
                     alt="NerdGoal"></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link disabled" aria-disabled="true" href="#about">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link " href="produto.html">Produtos</a></li>
-                    <li class="nav-item"><a class="nav-link disabled" aria-disabled="true" href="#signup">Contato</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produto.html">Produtos</a>
                     </li>
                 </ul>
+                <div class="d-flex theme-toggle">
+                    <span class="btn-login">Login</span>
+                    <a href="login.html" class="btn btn-link p-0"><img src="assets/img/userLight.png" width="30px"
+                            height="30px" alt="User"></a>
+                    <div class="btn-group theme-toggle" role="group" aria-label="Toggle Theme">
+                        <button class="light-theme btn btn-link p-0"><img src="assets/img/sun.png" width="30px"
+                                height="30px" alt="Light Theme"></button>
+                        <button class="dark-theme btn btn-link p-0"><img src="assets/img/moon.png" width="30px"
+                                height="30px" alt="Dark Theme"></button>
+                    </div>
+
+                </div>
             </div>
         </div>
     </nav>
-<!-- Masthead-->
-<header class="masthead">
-    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-        <div class="d-flex justify-content-center">
-            <div class="text-center">
-                <h1 class="mx-auto my-0 text-uppercase" style="background: linear-gradient(to bottom, rgba(255, 255, 0, 1), rgba(0, 0, 0, 0)); -webkit-background-clip: text; background-clip: text; color: transparent;">NerdGoal</h1>
-                <h2 class="text-white mx-auto mt-2 mb-5">👋 Bem-vindo(a) à nossa loja nerd! Aqui você encontra artigos incríveis para todos os gostos!</h2>
-                <a class="btn btn-warning" href="produto.html">Vamos começar</a>
+
+    <!-- Masthead-->
+    <header class="masthead text-center text-white">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase h1-title">NerdGoal</h1>
+                    <h2 class="text-white-80 mx-auto mt-2 mb-5">Explore nossa seleção exclusiva de produtos nerds na
+                        NerdGoal - sua loja online para camisetas, colecionáveis e muito mais!</h2>
+                    <a class="btn btn-warning btn-lg" href="produto.html">Vamos começar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <br><br><br>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <!-- Coluna com texto sobre a NerdGoal -->
+            <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center align-items-center pe-lg-5 ps-lg-5 pe-md-3 ps-md-3 pe-sm-0 ps-sm-0 mb-4 sobre-nerdgoal" style="height: 300px;">
+                <div style="max-width: 300px;">
+                  <h2 class="text-center">Sobre a NerdGoal</h2>
+                  <p class="text-center">A NerdGoal é sua loja online para camisetas, colecionáveis e muito mais! Explore nossa seleção exclusiva de produtos nerds.</p>
+                </div>
+              </div>
+            <!-- Carousel na coluna direita -->
+            <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center ps-lg-5 mb-4"
+                style="height: 300px;">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/img/carousel1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/carousel2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</header>
+    <!-- Categorias em Destaque -->
+    <section class="py-5" id="categories">
+        <div class="container px-4 px-lg-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 text-center">
+                    <h2 class="text-uppercase section-heading">Categorias em Destaque</h2>
+                    <p class="mb-5">Explore nossas principais categorias de produtos.</p>
+                </div>
+            </div>
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="assets/img/pelucia/produto1.png" alt="Categoria 1">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Pelúcias</h4>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="categoria.html" class="btn btn-warning">Ver Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="assets/img/camiseta/produto2.png" alt="Categoria 2">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Camisetas</h4>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="categoria.html" class="btn btn-warning">Ver Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="assets/img/outro/produto7.png" alt="Categoria 3">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Action Figure</h4>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="categoria.html" class="btn btn-warning">Ver Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<script src="./js/main.js"></script>
-<script src="./js/menu.js"></script> 
-<script src="./js/carrito.js"></script>     
+    <!-- FAQs Section -->
+    <section class="py-5 text-center" id="faqs">
+        <div class="container px-4 px-lg-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <h2 class="text-uppercase section-heading">Perguntas Frequentes</h2>
+                    <p class="mb-5">Aqui estão algumas perguntas frequentes para ajudar a esclarecer dúvidas.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ Item 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Como faço para realizar um pedido?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Para realizar um pedido, basta navegar até o produto desejado, adicionar ao carrinho
+                                    e seguir as instruções de checkout.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Quais são as opções de pagamento disponíveis?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Aceitamos várias formas de pagamento, incluindo cartão de crédito, PayPal e
+                                    transferência bancária.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Qual é a política de devolução da loja?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Nossa política de devolução permite devoluções dentro de 30 dias a partir da data de
+                                    entrega, sujeito a certas condições. Consulte nossa página de Política de Devolução
+                                    para obter mais detalhes.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Como faço para rastrear meu pedido?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Assim que seu pedido for enviado, você receberá um e-mail com as informações de
+                                    rastreamento. Você também pode acessar a página de Rastreamento de Pedidos em nosso
+                                    site e inserir seu número de pedido para obter informações atualizadas sobre a
+                                    entrega.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item 5 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Qual é a política de garantia dos produtos?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Oferecemos uma garantia de qualidade em todos os nossos produtos. Se você receber um
+                                    item com defeito ou danificado, entre em contato conosco dentro de 7 dias após o
+                                    recebimento e teremos o prazer de providenciar uma troca ou reembolso.
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase">Sobre Nós</h5>
+                    <p>NerdGoal é sua loja online para camisetas, colecionáveis e muito mais! Explore nossa seleção
+                        exclusiva de produtos nerds.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Home</a></li>
+                        <li><a href="produto.html" class="text-light">Produtos</a></li>
+                        <li><a href="#" class="text-light">Sobre</a></li>
+                        <li><a href="contato.html" class="text-light">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt"></i> Endereço: Rua Exemplo, 123</li>
+                        <li><i class="bi bi-telephone"></i> Telefone: (11) 1234-5678</li>
+                        <li><i class="bi bi-envelope"></i> Email: contato@nerdgoal.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 text-center mt-3">
+                    <p class="m-0">&copy; 2024 NerdGoal. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Fixed Image -->
+    <div class="fixed-image">
+        <img src="assets/img/darthVader.png" width="175px" height="175px" alt="Fixed Image">
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/changeTheme.js"></script>
 </body>
+
 </html>
